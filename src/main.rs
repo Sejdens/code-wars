@@ -1,3 +1,5 @@
+#![allow(unused)]
+
 mod kata;
 use kata::{kyu_6};
 
