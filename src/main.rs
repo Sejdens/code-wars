@@ -1,10 +1,11 @@
 #![allow(unused)]
 
 mod kata;
-use kata::{kyu_6};
+use kata::{kyu_6, kyu_7};
 
 fn main() {
-    println!("{:?}",
-        kyu_6::two_sum::two_sum(&[1, 2, 3], 4)
+    println!(
+        "{:?}",
+        kyu_7::maskify::maskify("Nananana Batman!")
     );
 }
