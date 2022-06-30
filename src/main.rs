@@ -1,7 +1,6 @@
 #![allow(unused)]
 
-mod kata;
-use kata::{kyu_6, kyu_7};
+use code_wars::kata::{kyu_6, kyu_7};
 
 fn main() {
     println!(

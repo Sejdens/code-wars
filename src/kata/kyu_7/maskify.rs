@@ -5,18 +5,21 @@
 //! ## Examples:
 //!
 //! ```
-//! "4556364607935616" --> "############5616"
-//! "64607935616" -->      "#######5616"
-//! "1" -->                "1"
-//!  "" -->                 ""
+//! use code_wars::kata::kyu_7::maskify::maskify;
+//!
+//! assert_eq!(maskify("4556364607935616"), "############5616");
+//! assert_eq!(maskify("64607935616"), "#######5616");
+//! assert_eq!(maskify("1"), "1");
+//! assert_eq!(maskify(""), "");
 //!
 //! // "What was the name of your first pet?"
 //!
-//! "Skippy" --> "##ippy"
+//! assert_eq!(maskify("Skippy"), "##ippy");
 //!
-//! "Nananananananananananananananana Batman!"
-//! -->
-//! "####################################man!"
+//! assert_eq!(
+//!     maskify("Nananananananananananananananana Batman!"),
+//!     "####################################man!"
+//! );
 //! ```
 //! 
 //! Source: [Credit Card Mask](https://www.codewars.com/kata/5412509bd436bd33920011bc/rust)
