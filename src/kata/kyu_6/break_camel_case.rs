@@ -11,8 +11,7 @@
 pub fn run(s: &str) -> String {
     s.chars().fold("".to_string(), |acc, x| {
         if x.is_uppercase() {
-            acc + &" ".to_string() + &x.to_string()
-            // acc + &format!(" {}", x.to_string())
+            acc + &format!(" {}", x.to_string())
         } else {
             acc + &x.to_string()
         }
