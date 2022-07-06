@@ -22,14 +22,10 @@
 //! assert_eq!(int32_to_ip::run(0), "0.0.0.0");
 //! ```
 
+use std::net::Ipv4Addr;
+
 pub fn run(int: u32) -> String {
-    format!(
-        "{}.{}.{}.{}",
-        int >> 24 & 255,
-        int >> 16 & 255,
-        int >> 8 & 255,
-        int & 255,
-    )
+    Ipv4Addr::from(int).to_string()
 }
 
 #[cfg(test)]
