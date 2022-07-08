@@ -4,14 +4,15 @@
 //! 
 //! ```
 //! use code_wars::kata::kyu_6::unique_in_order;
-//! assert_eq!(unique_in_order::run("AAAABBBCCDAABBB".chars()), vec!['A', 'B', 'C', 'D', 'A', 'B']);
-//! assert_eq!(unique_in_order::run("ABBCcAD".chars())        , vec!['A', 'B', 'C', 'c', 'A', 'D']);
-//! assert_eq!(unique_in_order::run([1,2,2,3,3])              , vec![1,2,3]);
+//! assert_eq!(unique_in_order::run_a("AAAABBBCCDAABBB".chars()), vec!['A', 'B', 'C', 'D', 'A', 'B']);
+//! assert_eq!(unique_in_order::run_a("ABBCcAD".chars())        , vec!['A', 'B', 'C', 'c', 'A', 'D']);
+//! assert_eq!(unique_in_order::run_a([1,2,2,3,3])              , vec![1,2,3]);
 //! ```
 //! 
 //! Source: [Unique In Order](https://www.codewars.com/kata/54e6533c92449cc251001667/rust)
 
-pub fn run<T>(sequence: T) -> Vec<T::Item>
+/// Turns sequence into iterator and folds it, pushing into a vector the deduped values.
+pub fn run_a<T>(sequence: T) -> Vec<T::Item>
 where
     T: std::iter::IntoIterator,
     T::Item: std::cmp::PartialEq + std::fmt::Debug,
@@ -28,12 +29,23 @@ where
     })
 }
 
+/// Turns sequence into a vector and uses the dedup method.
+pub fn run_b<T>(sequence: T) -> Vec<T::Item>
+where
+    T: std::iter::IntoIterator,
+    T::Item: std::cmp::PartialEq + std::fmt::Debug,
+{
+    let mut res = sequence.into_iter().collect::<Vec<_>>();
+    res.dedup();
+    res
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
 
     #[test]
     fn sample_test() {
-        assert_eq!(run("AAAABBBCCDAABBB".chars()), vec!['A','B','C','D','A','B']);
+        assert_eq!(run_a("AAAABBBCCDAABBB".chars()), vec!['A','B','C','D','A','B']);
     }
 }
