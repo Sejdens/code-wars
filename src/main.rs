@@ -1,28 +1,37 @@
 #![allow(unused)]
 
 use code_wars::kata::{kyu_6, kyu_7};
-use rand::Rng;
+use rand::{Rng, rngs::ThreadRng};
 use std::time::Instant;
 
 fn main() {
-    // dbg!(kyu_6::unique_in_order::run([1,1,2,2,3,2,2,3,2]));
+    use kyu_6::fold_array::run_a;
     
     let rounds = 10;
     let tries = 1_000_000;
     let mut time = 0.;
     let mut rng = rand::thread_rng();
     
-    // for round in 0..rounds {
-    //     let now = Instant::now();
-    //     let mut value: [char;20] = rng.gen();
-    //     for _ in 0..tries {
-    //         kyu_6::break_camel_case::run(value.iter().collect());
-    //         value = rng.gen::<[char;20]>();
-    //     }
-        
-    //     time += now.elapsed().as_secs_f64();
-    // }
+    fn gen_rand_arr<const SIZE: usize> (rng: &mut ThreadRng, n: i32) -> [i32; SIZE] {
+        let mut arr = [0; SIZE];
+        for x in &mut arr {
+            *x = rng.gen_range(-n..n);
+        }
+        arr
+    }
     
-    dbg!(rng.gen::<[char;10]>());
+    let mut a: [i32;20] = gen_rand_arr(&mut rng, 100);
+    for _ in 0..rounds {
+        let now = Instant::now();
+
+        for _ in 0..tries {
+            let b = rng.gen_range(1..5);
+            run_a(&a, b);
+            a = gen_rand_arr(&mut rng, 100);
+        }
+
+        time += now.elapsed().as_secs_f64();
+    }
     println!("Average time: {:.4}s", time / rounds as f64);
+    run_a(&a, 2);
 }
