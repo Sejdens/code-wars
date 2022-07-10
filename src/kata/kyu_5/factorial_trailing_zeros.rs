@@ -20,9 +20,15 @@
 //! 
 //! Source: [Number of trailing zeros of N!](https://www.codewars.com/kata/52f787eb172a8b4ae1000a34/rust)
 
+// Fastest for bigger numbers
 pub fn run_a(n: u64) -> u64 {
     std::iter::successors(Some(5u64), |n| n.checked_mul(5))
         .fold(0, |acc, x|  acc + n / x)
+}
+
+// Fastest for smaller numbers
+pub fn run_b(n: u64) -> u64 {
+    std::iter::successors(Some(n/5), |&n| Some(n/5)).take_while(|&n| n > 0).sum()
 }
 
 #[cfg(test)]
