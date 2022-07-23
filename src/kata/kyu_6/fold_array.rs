@@ -11,15 +11,17 @@
 //!
 //! A little visualization (NOT for the algorithm but for the idea of folding):
 //!
+//! ```text
 //!  Step 1         Step 2        Step 3       Step 4       Step5
 //!                      5/           5|         5\
 //!                     4/            4|          4\
 //! 1 2 3 4 5      1 2 3/         1 2 3|       1 2 3\       6 6 3
 //! ----*----      ----*          ----*        ----*        ----*
+//! ```
 //!
 //!
 //! Fold 2-times:
-//! [1,2,3,4,5] -> [9,6]
+//! \[1,2,3,4,5\] -> \[9,6\]
 //!
 //! ```
 //! use code_wars::kata::kyu_6::fold_array;
@@ -37,15 +39,13 @@
 //! Have fun coding it and please don't forget to vote and rank this kata! :-)
 //!
 //! I have created other katas. Have a look if you like coding and challenges.
-//! 
+//!
 //! Source: [Fold an array](https://www.codewars.com/kata/57ea70aa5500adfe8a000110/rust)
-
 
 /// Purely functional
 pub fn run_a(arr: &[i32], runs: usize) -> Vec<i32> {
     (0..runs).fold(arr.to_vec(), |mut acc, _| {
-        acc
-            .split_off(acc.len() / 2)
+        acc.split_off(acc.len() / 2)
             .iter()
             .rev()
             .zip(acc.iter().chain(std::iter::repeat(&0)))
@@ -95,7 +95,7 @@ mod tests {
         assert_eq!(run_a(&input, 1), [6, 6, 3]);
         assert_eq!(run_a(&input, 2), [9, 6]);
         assert_eq!(run_a(&input, 3), [15]);
-        
+
         let input = [-9, 9, -8, 8, 66, 23];
         assert_eq!(run_a(&input, 1), [14, 75, 0]);
     }
