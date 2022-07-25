@@ -1,14 +1,14 @@
 //! Implement the function unique_in_order which takes as argument a sequence and returns a list of items without any elements with the same value next to each other and preserving the original order of elements.
-//! 
+//!
 //! For example:
-//! 
+//!
 //! ```
-//! use code_wars::kata::kyu_6::unique_in_order;
+//! # use code_wars::kata::kyu_6::unique_in_order;
 //! assert_eq!(unique_in_order::run_a("AAAABBBCCDAABBB".chars()), vec!['A', 'B', 'C', 'D', 'A', 'B']);
 //! assert_eq!(unique_in_order::run_a("ABBCcAD".chars())        , vec!['A', 'B', 'C', 'c', 'A', 'D']);
 //! assert_eq!(unique_in_order::run_a([1,2,2,3,3])              , vec![1,2,3]);
 //! ```
-//! 
+//!
 //! Source: [Unique In Order](https://www.codewars.com/kata/54e6533c92449cc251001667/rust)
 
 /// Turns sequence into iterator and folds it, pushing into a vector the deduped values.
@@ -46,6 +46,9 @@ mod tests {
 
     #[test]
     fn sample_test() {
-        assert_eq!(run_a("AAAABBBCCDAABBB".chars()), vec!['A','B','C','D','A','B']);
+        assert_eq!(
+            run_a("AAAABBBCCDAABBB".chars()),
+            vec!['A', 'B', 'C', 'D', 'A', 'B']
+        );
     }
 }

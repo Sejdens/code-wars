@@ -7,7 +7,7 @@
 //! Based on: [http://oj.leetcode.com/problems/two-sum/](http://oj.leetcode.com/problems/two-sum/)
 //!
 //! ```
-//! use code_wars::kata::kyu_6::two_sum::two_sum;
+//! # use code_wars::kata::kyu_6::two_sum::two_sum;
 //! assert!(two_sum(&[1, 2, 3], 4) == (0, 2) ||
 //!     two_sum(&[1, 2, 3], 4) == (2, 0)
 //!     )

@@ -5,7 +5,7 @@
 //! Fold 1-times:
 //!
 //! ```
-//! use code_wars::kata::kyu_6::fold_array;
+//! # use code_wars::kata::kyu_6::fold_array;
 //! assert_eq!(fold_array::run_a(&[1,2,3,4,5], 1), [6,6,3]);
 //! ```
 //!
@@ -24,7 +24,7 @@
 //! \[1,2,3,4,5\] -> \[9,6\]
 //!
 //! ```
-//! use code_wars::kata::kyu_6::fold_array;
+//! # use code_wars::kata::kyu_6::fold_array;
 //! assert_eq!(fold_array::run_a(&[1,2,3,4,5], 2), [9,6]);
 //! ```
 //!

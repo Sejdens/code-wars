@@ -1,8 +1,8 @@
 //! Complete the solution so that the function will break up camel casing, using a space between words.
 //! ## Example
-//! 
+//!
 //! ```
-//! use code_wars::kata::kyu_6::break_camel_case;
+//! # use code_wars::kata::kyu_6::break_camel_case;
 //! assert_eq!(break_camel_case::run("camelCasing"), "camel Casing");
 //! assert_eq!(break_camel_case::run("identifier"), "identifier");
 //! assert_eq!(break_camel_case::run(""), "");

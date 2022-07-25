@@ -5,7 +5,7 @@
 //! ## Examples:
 //!
 //! ```
-//! use code_wars::kata::kyu_7::maskify::maskify;
+//! # use code_wars::kata::kyu_7::maskify::maskify;
 //!
 //! assert_eq!(maskify("4556364607935616"), "############5616");
 //! assert_eq!(maskify("64607935616"), "#######5616");
@@ -21,7 +21,7 @@
 //!     "####################################man!"
 //! );
 //! ```
-//! 
+//!
 //! Source: [Credit Card Mask](https://www.codewars.com/kata/5412509bd436bd33920011bc/rust)
 
 pub fn maskify(cc: &str) -> String {
