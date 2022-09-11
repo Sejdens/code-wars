@@ -22,61 +22,44 @@ pub fn run(arr: &[i32]) -> String {
     if arr.len() == 0 {
         return "".to_owned();
     }
-    let mut ans: Vec<i32> = vec![arr[0]];
+    let mut ans = vec![arr[0]];
     let mut chained = false;
     let mut tail = 0;
     let mut mods: Vec<(usize, String)> = Vec::new();
-    let mut last_num = *ans.last().unwrap();
 
     for i in arr.iter().skip(1) {
         if !chained {
-            // No chain: Push number
-            if last_num + 1 != *i {
+            if ans.last().unwrap() + 1 != *i {
                 ans.push(*i);
-                last_num = *ans.last().unwrap();
-
-            // Chain start: follow chain tail
             } else {
                 chained = true;
                 tail = *i;
             }
-
-        // Chain continues: follow tail
         } else if tail + 1 == *i {
             tail = *i;
-
-        // Chain ends
         } else {
-            // False chain: add number
-            if last_num + 1 == tail {
+            if ans.last().unwrap() + 1 == tail {
                 ans.push(tail);
-
-            // True chain: push "-" and chain tail to modifications list
             } else {
                 mods.push((ans.len() - 1, format!("-{}", &tail.to_string())));
             }
-            // Push number that ended the chain
             ans.push(*i);
-            last_num = *ans.last().unwrap();
             chained = false;
         }
     }
 
-    // Push last number chain tail
     if chained {
-        if last_num + 1 == tail {
+        if ans.last().unwrap() + 1 == tail {
             ans.push(tail);
         } else {
             mods.push((ans.len() - 1, "-".to_owned() + &tail.to_string()));
         }
     }
 
-    // Convert numbers to strings
     let mut ans = ans.iter().map(|num| num.to_string()).collect::<Vec<_>>();
 
-    // Apply modifications to show chain ranges
     for m in &mods {
-        ans[m.0] += &m.1;
+        ans[m.0] += &m.1
     }
     ans.join(",")
 }
