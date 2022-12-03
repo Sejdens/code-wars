@@ -9,7 +9,7 @@
 //! ## Examples
 //!
 //! ```
-//! # use code_wars::kata::kyu_6::valid_braces;
+//! # use challenges::code_wars::kata::kyu_6::valid_braces;
 //! assert_eq!(valid_braces::run("(){}[]"), true );
 //! assert_eq!(valid_braces::run("([{}])"), true );
 //! assert_eq!(valid_braces::run("(}"), false);

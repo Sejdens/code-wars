@@ -2,7 +2,7 @@
 //! ## Example
 //!
 //! ```
-//! # use code_wars::kata::kyu_6::break_camel_case;
+//! # use challenges::code_wars::kata::kyu_6::break_camel_case;
 //! assert_eq!(break_camel_case::run("camelCasing"), "camel Casing");
 //! assert_eq!(break_camel_case::run("identifier"), "identifier");
 //! assert_eq!(break_camel_case::run(""), "");

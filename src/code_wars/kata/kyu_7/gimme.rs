@@ -5,7 +5,7 @@
 //! # Example:
 //!
 //! ```
-//! # use code_wars::kata::kyu_7::gimme::gimme;
+//! # use challenges::code_wars::kata::kyu_7::gimme::gimme;
 //! assert_eq!(gimme([2, 3, 1]), 0);
 //! ```
 //!
@@ -14,7 +14,7 @@
 //! Another example (just to make sure it is clear):
 //!
 //! ```
-//! use code_wars::kata::kyu_7::gimme::gimme;
+//! use challenges::code_wars::kata::kyu_7::gimme::gimme;
 //! assert_eq!(gimme([5, 10, 14]), 1);
 //! ```
 //!

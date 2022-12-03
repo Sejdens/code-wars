@@ -5,7 +5,7 @@
 //! ## Examples:
 //!
 //! ```
-//! # use code_wars::kata::kyu_7::maskify::maskify;
+//! # use challenges::code_wars::kata::kyu_7::maskify::maskify;
 //!
 //! assert_eq!(maskify("4556364607935616"), "############5616");
 //! assert_eq!(maskify("64607935616"), "#######5616");

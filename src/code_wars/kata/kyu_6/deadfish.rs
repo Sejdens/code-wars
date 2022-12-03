@@ -10,7 +10,7 @@
 //! Invalid characters should be ignored.
 //!
 //! ```
-//! # use code_wars::kata::kyu_6::deadfish;
+//! # use challenges::code_wars::kata::kyu_6::deadfish;
 //! assert_eq!(deadfish::run("iiisdoso"), [ 8, 64 ]);
 //! ```
 

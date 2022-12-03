@@ -3,7 +3,7 @@
 //! For example:
 //!
 //! ```
-//! # use code_wars::kata::kyu_6::unique_in_order;
+//! # use challenges::code_wars::kata::kyu_6::unique_in_order;
 //! assert_eq!(unique_in_order::run_a("AAAABBBCCDAABBB".chars()), vec!['A', 'B', 'C', 'D', 'A', 'B']);
 //! assert_eq!(unique_in_order::run_a("ABBCcAD".chars())        , vec!['A', 'B', 'C', 'c', 'A', 'D']);
 //! assert_eq!(unique_in_order::run_a([1,2,2,3,3])              , vec![1,2,3]);

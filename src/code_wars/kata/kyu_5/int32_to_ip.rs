@@ -16,7 +16,7 @@
 //! ## Examples
 //!
 //! ```
-//! # use code_wars::kata::kyu_5::int32_to_ip;
+//! # use challenges::code_wars::kata::kyu_5::int32_to_ip;
 //! assert_eq!(int32_to_ip::run(2149583361), "128.32.10.1");
 //! assert_eq!(int32_to_ip::run(32), "0.0.0.32");
 //! assert_eq!(int32_to_ip::run(0), "0.0.0.0");

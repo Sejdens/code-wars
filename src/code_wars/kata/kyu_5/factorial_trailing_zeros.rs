@@ -8,7 +8,7 @@
 //! Examples
 //!
 //! ```
-//! # use code_wars::kata::kyu_5::factorial_trailing_zeros;
+//! # use challenges::code_wars::kata::kyu_5::factorial_trailing_zeros;
 //! assert_eq!(factorial_trailing_zeros::run_a(6), 1);
 //! // 6! = 1 * 2 * 3 * 4 * 5 * 6 = 720 --> 1 trailing zero
 //!
