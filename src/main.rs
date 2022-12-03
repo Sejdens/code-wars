@@ -1,6 +1,6 @@
 #![allow(unused)]
 
-use code_wars::kata::{kyu_5, kyu_6, kyu_7};
+use challenges::code_wars::kata::{kyu_5, kyu_6, kyu_7};
 use rand::{rngs::ThreadRng, Rng};
 use std::time::Instant;
 

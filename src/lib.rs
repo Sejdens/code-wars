@@ -1,1 +1,1 @@
-pub mod kata;
+pub mod code_wars;
