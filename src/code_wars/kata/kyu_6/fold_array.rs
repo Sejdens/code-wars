@@ -82,7 +82,7 @@ pub fn run_c(arr: &[i32], runs: usize) -> Vec<i32> {
         vec.truncate(vec.len() - segment_len)
     }
 
-    vec.into()
+    vec
 }
 
 #[cfg(test)]

@@ -19,7 +19,7 @@
  */
 
 pub fn run(arr: &[i32]) -> String {
-    if arr.len() == 0 {
+    if arr.is_empty() {
         return "".to_owned();
     }
     let mut ans = vec![arr[0]];
