@@ -6,5 +6,7 @@ use rand::{rngs::ThreadRng, Rng};
 use std::time::Instant;
 
 fn main() {
-    d1_calorie_counting::run_1();
+    // d1_calorie_counting::run_1();
+    // d1_calorie_counting::run_2();
+    // let arr = [4, 5, 2];
 }

@@ -33,6 +33,12 @@ pub fn gimme(arr: [i32; 3]) -> usize {
     1
 }
 
+pub fn mid(arr: [i32; 3]) -> usize {
+    let mut sorted_arr = arr.to_vec();
+    sorted_arr.sort();
+    arr.iter().position(|&x| x == sorted_arr[1]).unwrap()
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -42,5 +48,12 @@ mod tests {
         assert_eq!(gimme([2, 3, 1]), 0);
         assert_eq!(gimme([-2, -3, -1]), 0);
         assert_eq!(gimme([5, 10, 14]), 1);
+    }
+
+    #[test]
+    fn test_mid() {
+        assert_eq!(mid([2, 3, 1]), 0);
+        assert_eq!(mid([-2, -3, -1]), 0);
+        assert_eq!(mid([5, 10, 14]), 1);
     }
 }
