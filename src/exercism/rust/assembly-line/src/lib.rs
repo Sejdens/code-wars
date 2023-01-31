@@ -2,9 +2,9 @@ pub fn production_rate_per_hour(speed: u8) -> f64 {
     let base_production = 221_f64;
     let success_rate: f64 = match speed {
         0 => 0.0,
-        speed @ 1..=4 => 1.0,
-        speed @ 5..=8 => 0.9,
-        speed @ 9..=10 => 0.77,
+        1..=4 => 1.0,
+        5..=8 => 0.9,
+        9..=10 => 0.77,
         _ => unreachable!(),
     };
 
